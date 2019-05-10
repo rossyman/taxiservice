@@ -2,7 +2,8 @@ package uk.ac.strath.cs112;
 
 import java.util.List;
 import java.util.LinkedList;
-    
+import uk.ac.strath.cs112.model.impl.actor.Vehicle;
+
 /**
  * A shuttle is able to carry multiple passengers.
  * This implementation is non-functional.

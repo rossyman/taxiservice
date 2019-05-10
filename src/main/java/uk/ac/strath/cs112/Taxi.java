@@ -2,6 +2,8 @@ package uk.ac.strath.cs112;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import uk.ac.strath.cs112.model.DrawableItem;
+import uk.ac.strath.cs112.model.impl.actor.Vehicle;
 
 /**
  * A taxi is able to carry a single passenger.

@@ -1,11 +1,14 @@
-package uk.ac.strath.cs112;
+package uk.ac.strath.cs112.model.impl.actor;
 
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.awt.*;
 import javax.swing.*;
-    
+import uk.ac.strath.cs112.City;
+import uk.ac.strath.cs112.Location;
+import uk.ac.strath.cs112.model.Actor;
+import uk.ac.strath.cs112.model.DrawableItem;
+import uk.ac.strath.cs112.model.Item;
+
 /**
  * Provide a view of the vehicles and passengers in the city.
  * 

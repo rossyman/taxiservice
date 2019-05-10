@@ -1,9 +1,11 @@
-package uk.ac.strath.cs112;
+package uk.ac.strath.cs112.model.impl.actor;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
+import uk.ac.strath.cs112.City;
+import uk.ac.strath.cs112.Location;
+import uk.ac.strath.cs112.Passenger;
+import uk.ac.strath.cs112.TaxiCompany;
+import uk.ac.strath.cs112.model.Actor;
 
 /**
  * Periodically generate passengers.

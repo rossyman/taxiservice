@@ -1,4 +1,6 @@
-package uk.ac.strath.cs112;
+package uk.ac.strath.cs112.model;
+
+import uk.ac.strath.cs112.Location;
 
 /**
  * An item in the city.

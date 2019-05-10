@@ -3,7 +3,8 @@ package uk.ac.strath.cs112;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-    
+import uk.ac.strath.cs112.model.Item;
+
 /**
  * A collection of items in the city.
  * 

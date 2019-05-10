@@ -1,4 +1,4 @@
-package uk.ac.strath.cs112;
+package uk.ac.strath.cs112.model;
 
 import java.awt.Image;
     

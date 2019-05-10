@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Random;
+import uk.ac.strath.cs112.model.impl.actor.Vehicle;
 
 /**
  * Model the operation of a taxi company, operating different
@@ -46,7 +47,7 @@ public class TaxiCompany
         Vehicle vehicle = scheduleVehicle();
         if(vehicle != null) {
             assignments.put(vehicle, passenger);
-            vehicle.setPickupLocation(passenger.getPickupLocation());
+            vehicle.setPickupLocation(passenger.getLocation());
             return true;
         }
         else {

@@ -1,8 +1,10 @@
-package uk.ac.strath.cs112;
+package uk.ac.strath.cs112.model.impl.actor;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import uk.ac.strath.cs112.City;
+import uk.ac.strath.cs112.TaxiCompany;
+import uk.ac.strath.cs112.model.Actor;
 
 /**
  * Run the simulation by asking a collection of actors to act.

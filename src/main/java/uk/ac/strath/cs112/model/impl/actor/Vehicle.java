@@ -1,4 +1,9 @@
-package uk.ac.strath.cs112;
+package uk.ac.strath.cs112.model.impl.actor;
+
+import uk.ac.strath.cs112.Location;
+import uk.ac.strath.cs112.Passenger;
+import uk.ac.strath.cs112.TaxiCompany;
+import uk.ac.strath.cs112.model.Actor;
 
 /**
  * Model the common elements of taxis and shuttles.

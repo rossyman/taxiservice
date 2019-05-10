@@ -50,7 +50,7 @@ public class CityGUI extends JFrame implements Actor
             Item item = items.next();
             if(item instanceof DrawableItem){
                 DrawableItem drawable = (DrawableItem) item;
-                Location location = item.getLocation();
+                Location location = item.getCurrentLocation();
                 cityView.drawImage(location.getX(), location.getY(), drawable.getImage());
             }
         }

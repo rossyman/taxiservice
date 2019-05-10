@@ -3,7 +3,7 @@ package uk.ac.strath.cs112.model.impl.actor;
 import java.util.Random;
 import uk.ac.strath.cs112.City;
 import uk.ac.strath.cs112.Location;
-import uk.ac.strath.cs112.Passenger;
+import uk.ac.strath.cs112.model.impl.drawableitem.Passenger;
 import uk.ac.strath.cs112.TaxiCompany;
 import uk.ac.strath.cs112.model.Actor;
 
@@ -26,8 +26,8 @@ public class PassengerSource implements Actor
     /**
      * Constructor for objects of class PassengerSource.
      * @param city The city. Must not be null.
-     * @param company The company to be used. Must not be null.
-     * @throws NullPointerException if city or company is null.
+     * @param company The taxiCompany to be used. Must not be null.
+     * @throws NullPointerException if city or taxiCompany is null.
      */
     public PassengerSource(City city, TaxiCompany company)
     {
@@ -35,7 +35,7 @@ public class PassengerSource implements Actor
             throw new NullPointerException("city");
         }
         if(company == null) {
-            throw new NullPointerException("company");
+            throw new NullPointerException("taxiCompany");
         }
         this.city = city;
         this.company = company;

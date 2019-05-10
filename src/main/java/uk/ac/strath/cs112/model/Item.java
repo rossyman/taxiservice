@@ -11,5 +11,5 @@ import uk.ac.strath.cs112.Location;
 
 public interface Item
 {
-    public Location getLocation();
+    Location getCurrentLocation();
 }

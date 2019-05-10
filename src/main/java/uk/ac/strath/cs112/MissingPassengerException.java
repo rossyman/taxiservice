@@ -1,6 +1,6 @@
 package uk.ac.strath.cs112;
 
-import uk.ac.strath.cs112.model.impl.actor.Vehicle;
+import uk.ac.strath.cs112.model.impl.actor.vehicle.Vehicle;
 
 /**
  * Indicate that there was no passenger at a pickup point.

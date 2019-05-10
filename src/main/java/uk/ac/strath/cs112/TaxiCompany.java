@@ -6,10 +6,12 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Random;
-import uk.ac.strath.cs112.model.impl.actor.Vehicle;
+import uk.ac.strath.cs112.model.impl.actor.vehicle.Vehicle;
+import uk.ac.strath.cs112.model.impl.drawableitem.Passenger;
+import uk.ac.strath.cs112.model.impl.drawableitem.Taxi;
 
 /**
- * Model the operation of a taxi company, operating different
+ * Model the operation of a taxi taxiCompany, operating different
  * types of vehicle. This version operates a only taxis.
  * 
  * @author David J. Barnes and Michael Kölling
@@ -17,7 +19,7 @@ import uk.ac.strath.cs112.model.impl.actor.Vehicle;
  */
 public class TaxiCompany  
 {
-    // The vehicles operated by the company.
+    // The vehicles operated by the taxiCompany.
     private List<Vehicle> vehicles;
     private City city;
     // The associations between vehicles and the passengers
@@ -47,7 +49,7 @@ public class TaxiCompany
         Vehicle vehicle = scheduleVehicle();
         if(vehicle != null) {
             assignments.put(vehicle, passenger);
-            vehicle.setPickupLocation(passenger.getLocation());
+            vehicle.setPickupLocation(passenger.getCurrentLocation());
             return true;
         }
         else {
@@ -105,7 +107,7 @@ public class TaxiCompany
     }
 
     /**
-     * Set up this company's vehicles. The optimum number of
+     * Set up this taxiCompany's vehicles. The optimum number of
      * vehicles should be determined by analysis of the
      * data gathered from the simulation.
      *

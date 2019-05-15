@@ -28,6 +28,9 @@ public class TaxiCompany {
    * @param city The city.
    */
   public TaxiCompany(City city) {
+    if (city == null) {
+      throw new IllegalArgumentException("City cannot be null!");
+    }
     this.city = city;
     this.vehicles = new LinkedList<>();
     this.assignments = new HashMap<>();
@@ -43,6 +46,9 @@ public class TaxiCompany {
   public boolean requestPickup(Passenger passenger) {
     Vehicle vehicle = scheduleVehicle();
     if (vehicle != null) {
+      if (passenger == null) {
+        throw new MissingPassengerException(vehicle);
+      }
       assignments.put(vehicle, passenger);
       vehicle.setPickupLocation(passenger.getCurrentLocation());
       return true;
@@ -112,6 +118,7 @@ public class TaxiCompany {
     Random rand = new Random(12345);
 
     // Create the taxis.
+    // This method may create multiple taxis in the same Location
     for (int i = 0; i < NUMBER_OF_TAXIS; i++) {
       Taxi taxi =
           new Taxi(this,

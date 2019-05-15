@@ -86,6 +86,9 @@ public class Taxi extends Vehicle implements DrawableItem {
    * @param passenger The passenger.
    */
   public void pickup(Passenger passenger) {
+    if (passenger == null) {
+      throw new MissingPassengerException(vehicle);
+    }
     this.passenger = passenger;
     setTargetLocation(passenger.getDestination());
   }

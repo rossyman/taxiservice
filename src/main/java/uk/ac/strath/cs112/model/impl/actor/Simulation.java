@@ -22,8 +22,7 @@ public class Simulation
      */
     public Simulation()
     {
-        actors = new LinkedList<>();
-        step = 0;
+        this.actors = new LinkedList<>();
         City city = new City();
         TaxiCompany company = new TaxiCompany(city);
         PassengerSource source = new PassengerSource(city, company);

@@ -1,11 +1,12 @@
 package uk.ac.strath.cs112.model.impl.actor.vehicle;
 
-import com.sun.istack.internal.NotNull;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 import uk.ac.strath.cs112.Location;
 import uk.ac.strath.cs112.TaxiCompany;
 import uk.ac.strath.cs112.model.Actor;
-import uk.ac.strath.cs112.model.DrawableItem;
 import uk.ac.strath.cs112.model.impl.drawableitem.Passenger;
 
 /**
@@ -13,7 +14,8 @@ import uk.ac.strath.cs112.model.impl.drawableitem.Passenger;
  *
  * @author Ross MacPhee <a href="mailto:hello@rossmacphee.com">hello@rossmacphee.com</a>
  */
-@Data
+@Getter
+@Setter
 public abstract class Vehicle implements Actor {
 
   private TaxiCompany taxiCompany;
@@ -26,8 +28,9 @@ public abstract class Vehicle implements Actor {
    *
    * @param taxiCompany The taxi taxiCompany. Must not be null.
    * @param startLocation The vehicle's starting point. Must not be null.
+   * @throws NullPointerException If a TaxiCompany or starting location isn't supplied.
    */
-  public Vehicle(@NotNull TaxiCompany taxiCompany, @NotNull Location startLocation) {
+  public Vehicle(@NonNull TaxiCompany taxiCompany, @NonNull Location startLocation) {
     this.taxiCompany = taxiCompany;
     this.currentLocation = startLocation;
   }

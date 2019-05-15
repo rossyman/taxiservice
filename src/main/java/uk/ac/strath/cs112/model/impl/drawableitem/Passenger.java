@@ -1,9 +1,9 @@
 package uk.ac.strath.cs112.model.impl.drawableitem;
 
-import com.sun.istack.internal.NotNull;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import lombok.Data;
+import lombok.NonNull;
 import uk.ac.strath.cs112.Location;
 import uk.ac.strath.cs112.model.DrawableItem;
 
@@ -24,11 +24,12 @@ public class Passenger implements DrawableItem {
    *
    * @param currentLocation The location location, must not be null.
    * @param destination The destination location, must not be null.
+   * @throws NullPointerException If a location or destination isn't supplied
    */
-  public Passenger(@NotNull Location currentLocation, @NotNull Location destination) {
+  public Passenger(@NonNull Location currentLocation, @NonNull Location destination) {
     this.currentLocation = currentLocation;
     this.destination = destination;
-    this.image = new ImageIcon(getClass().getResource("images/person.jpg")).getImage();
+    this.image = new ImageIcon(getClass().getResource("/images/person.jpg")).getImage();
   }
 
   /**

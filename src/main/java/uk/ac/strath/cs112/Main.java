@@ -1,11 +1,11 @@
 package uk.ac.strath.cs112;
 
+import uk.ac.strath.cs112.model.impl.actor.Simulation;
+
 public class Main {
 
   public static void main(String... args) {
-
-    TaxiCompany taxiCompany = new TaxiCompany(new City());
-
+    (new Simulation()).run();
   }
 
 }

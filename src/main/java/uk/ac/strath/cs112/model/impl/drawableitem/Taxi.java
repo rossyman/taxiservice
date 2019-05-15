@@ -1,10 +1,8 @@
 package uk.ac.strath.cs112.model.impl.drawableitem;
 
-import static java.util.Optional.ofNullable;
-
-import com.sun.istack.internal.NotNull;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import lombok.NonNull;
 import uk.ac.strath.cs112.Location;
 import uk.ac.strath.cs112.TaxiCompany;
 import uk.ac.strath.cs112.model.DrawableItem;
@@ -26,16 +24,17 @@ public class Taxi extends Vehicle implements DrawableItem {
    *
    * @param company The taxi company.
    * @param location The vehicle's starting point.
+   * @throws NullPointerException If a company or location isn't supplied
    */
-  public Taxi(@NotNull TaxiCompany company, @NotNull Location location) {
+  public Taxi(@NonNull TaxiCompany company, @NonNull Location location) {
 
     super(company, location);
 
     emptyImage = new ImageIcon(getClass().getResource(
-        "images/taxi.jpg")).getImage();
+        "/images/taxi.jpg")).getImage();
 
     passengerImage = new ImageIcon(getClass().getResource(
-        "images/taxi+person.jpg")).getImage();
+        "/images/taxi+person.jpg")).getImage();
 
   }
 

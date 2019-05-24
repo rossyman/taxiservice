@@ -26,6 +26,7 @@ public class TaxiCompany {
 
   /**
    * @param city The city.
+   * @throws IllegalArgumentException If there is no city provided.
    */
   public TaxiCompany(City city) {
     if (city == null) {
@@ -42,6 +43,7 @@ public class TaxiCompany {
    *
    * @param passenger The passenger requesting a pickup.
    * @return Whether a free vehicle is available.
+   * @throws MissingPassengerException If passenger is null
    */
   public boolean requestPickup(Passenger passenger) {
     Vehicle vehicle = scheduleVehicle();

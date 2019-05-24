@@ -3,7 +3,6 @@ package uk.ac.strath.cs112.model.impl.drawableitem;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import lombok.NonNull;
-import lombok.Data;
 import uk.ac.strath.cs112.Location;
 import uk.ac.strath.cs112.TaxiCompany;
 import uk.ac.strath.cs112.model.DrawableItem;
@@ -14,7 +13,6 @@ import uk.ac.strath.cs112.model.impl.actor.vehicle.Vehicle;
  *
  * @author Ross MacPhee <a href="mailto:hello@rossmacphee.com">hello@rossmacphee.com</a>
  */
-@Data
 public class Taxi extends Vehicle implements DrawableItem {
 
   private Passenger passenger;

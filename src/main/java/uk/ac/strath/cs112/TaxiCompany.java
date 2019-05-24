@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import lombok.Data;
 import uk.ac.strath.cs112.model.impl.actor.vehicle.Vehicle;
 import uk.ac.strath.cs112.model.impl.drawableitem.Passenger;
 import uk.ac.strath.cs112.model.impl.drawableitem.Taxi;
@@ -16,6 +17,7 @@ import uk.ac.strath.cs112.model.impl.drawableitem.Taxi;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  */
+@Data
 public class TaxiCompany {
 
   private static final int NUMBER_OF_TAXIS = 3;
@@ -81,13 +83,6 @@ public class TaxiCompany {
    * @param passenger The passenger being dropped off.
    */
   public void arrivedAtDestination(Vehicle vehicle, Passenger passenger) {
-  }
-
-  /**
-   * @return The list of vehicles.
-   */
-  public List<Vehicle> getVehicles() {
-    return this.vehicles;
   }
 
   /**

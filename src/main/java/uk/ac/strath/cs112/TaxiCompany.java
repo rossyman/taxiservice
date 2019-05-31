@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import lombok.Data;
 import uk.ac.strath.cs112.model.impl.actor.vehicle.Vehicle;
 import uk.ac.strath.cs112.model.impl.drawableitem.Passenger;
 import uk.ac.strath.cs112.model.impl.drawableitem.Taxi;
@@ -16,6 +17,7 @@ import uk.ac.strath.cs112.model.impl.drawableitem.Taxi;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  */
+@Data
 public class TaxiCompany {
 
   private static final int NUMBER_OF_TAXIS = 3;
@@ -26,8 +28,12 @@ public class TaxiCompany {
 
   /**
    * @param city The city.
+   * @throws IllegalArgumentException If there is no city provided.
    */
   public TaxiCompany(City city) {
+    if (city == null) {
+      throw new IllegalArgumentException("City cannot be null!");
+    }
     this.city = city;
     this.vehicles = new LinkedList<>();
     this.assignments = new HashMap<>();
@@ -39,10 +45,14 @@ public class TaxiCompany {
    *
    * @param passenger The passenger requesting a pickup.
    * @return Whether a free vehicle is available.
+   * @throws MissingPassengerException If passenger is null
    */
   public boolean requestPickup(Passenger passenger) {
     Vehicle vehicle = scheduleVehicle();
     if (vehicle != null) {
+      if (passenger == null) {
+        throw new MissingPassengerException(vehicle);
+      }
       assignments.put(vehicle, passenger);
       vehicle.setPickupLocation(passenger.getCurrentLocation());
       return true;
@@ -76,13 +86,6 @@ public class TaxiCompany {
   }
 
   /**
-   * @return The list of vehicles.
-   */
-  public List<Vehicle> getVehicles() {
-    return this.vehicles;
-  }
-
-  /**
    * Find a free vehicle, if any.
    *
    * @return A free vehicle, or null if there is none.
@@ -112,6 +115,7 @@ public class TaxiCompany {
     Random rand = new Random(12345);
 
     // Create the taxis.
+    // This method may create multiple taxis in the same Location
     for (int i = 0; i < NUMBER_OF_TAXIS; i++) {
       Taxi taxi =
           new Taxi(this,

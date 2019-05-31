@@ -60,6 +60,9 @@ public class Location
      */
     public int distance(Location destination)
     {
+        if ( destination == null ) {
+            throw new IllegalArgumentException("Must have a location to calculate the number of steps required to get there!");
+        }
         int xDist = Math.abs(destination.getX() - x);
         int yDist = Math.abs(destination.getY() - y);
         return Math.max(xDist, yDist);
